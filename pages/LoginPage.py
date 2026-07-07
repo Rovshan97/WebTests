@@ -2,17 +2,17 @@ from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
+    LOGIN_TAB = (By.XPATH, //*[@data-l="t,login_tab"])
+    QR_CODE = (By.XPATH, //*[@data-l='t,qr_tab'])
     LOGIN_FIELD = (By.ID, 'field_email')
-    LOGIN_BUTTON = (By.DATA-TEST-ID, 'enter-action')
     PASSWORD_FIELD = (By.ID, 'field_password')
-    HIDE_PASSWORD = (By.XPATH, //*[@id="tabpanel-login-647130740"]/vkid-form-adapter/div/div/div/div/div[1]/form/div[2]/span/div/div[2]/span/button)
-    QR_CODE = (By.DATA-L, 't,qr_tab')
-    LOGIN_BY_QR = (By.LABEL, 'Войти по QR-коду')
-    FORGOT_YOUR_PASSWORD = (By.ARIA-LABEL, 'Не получается войти?')
-    REGISTRATION = (By.XPATH, '//*[@id="tabpanel-login-647130740"]/vkid-form-adapter/div/div/div/div/div[3]/button')
-    AUTHORIZATION_BY_VK = (By.DATA-L, 't,vkc')
-    AUTHORIZATION_BY_MAIL_RU = (By.DATA-L, 't,mailru')
-    AUTHORIZATION_BY_YANDEX = (By.DATA-L, 't,yandex')
+    LOGIN_BUTTON = (By.XPATH, //*[@data-test-id="enter-action"])
+    LOGIN_BY_QR = (By.XPATH, //*[@label="Войти по QR-коду"])
+    HIDE_PASSWORD = (By.XPATH, //*[@aria-label="Не получается войти?"])
+    REGISTRATION = (By.XPATH, //*[@id="tabpanel-login-7316272031"]/vkid-form-adapter/div/div/div/div/div[3]/button)
+    AUTHORIZATION_BY_VK = (By.XPATH, //*[@data-l='t,vkc'])
+    AUTHORIZATION_BY_MAIL_RU = (By.XPATH, //*[@data-l='t,mailru'])
+    AUTHORIZATION_BY_YANDEX = (By.XPATH, //*[@data-l='t,yandex'])
 
 class LoginPageHelper(BasePage):
     pass
