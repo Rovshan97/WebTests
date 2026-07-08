@@ -14,4 +14,32 @@ class LoginPageLocators:
     AUTHORIZATION_BY_MAIL_RU = (By.XPATH, '//*[@data-l="t,mailru"]')
     AUTHORIZATION_BY_YANDEX = (By.XPATH, '//*[@data-l="t,yandex"]')
     OTHER_BUTTON = (By.XPATH, '//*[@data-l="t,other"]')
-    ERROR_TEXT = (By.XPATH, '//*[@class="input-e login-error"]')
+    ERROR_TEXT = (By.XPATH, '//*[@class="LoginForm-module__error___1xmAD vkuiCaption__sizeYNone vkuiCaption__level1 vkuiTypography__host vkuiTypography__normalize vkuiRootComponent__host"]')
+
+class LoginPageHelper(BasePage):
+    def __init__(self, driver):
+        self.driver = driver
+        self.check_page()
+
+    def check_page(self):
+        self.find_element(LoginPageLocators.LOGIN_TAB)
+        self.find_element(LoginPageLocators.QR_CODE)
+        self.find_element(LoginPageLocators.LOGIN_FIELD)
+        self.find_element(LoginPageLocators.PASSWORD_FIELD)
+        self.find_element(LoginPageLocators.LOGIN_BUTTON)
+        self.find_element(LoginPageLocators.LOGIN_BY_QR)
+        self.find_element(LoginPageLocators.HIDE_PASSWORD)
+        self.find_element(LoginPageLocators.REGISTRATION)
+        self.find_element(LoginPageLocators.AUTHORIZATION_BY_VK)
+        self.find_element(LoginPageLocators.AUTHORIZATION_BY_MAIL_RU)
+        self.find_element(LoginPageLocators.AUTHORIZATION_BY_YANDEX)
+
+    def click_login(self):
+        self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
+
+    def get_text_error(self):
+        return self.find_element(LoginPageLocators.ERROR_TEXT).text
+
+    def enter_login(self, text):
+        login_field = self.find_element(LoginPageLocators.LOGIN_FIELD)
+        login_field.send_keys(text)
