@@ -10,12 +10,10 @@ class LoginPageLocators:
     LOGIN_BUTTON = (By.XPATH, '//*[@data-test-id="enter-action"]')
     LOGIN_BY_QR = (By.XPATH, '//*[@label="Войти по QR-коду"]')
     HIDE_PASSWORD = (By.XPATH, '//*[@aria-label="Не получается войти?"]')
-    REGISTRATION = (By.XPATH, '//div[@class="LoginFormMain-module__bottom___YLtCo"]/button[@type="button"]')
     AUTHORIZATION_BY_VK = (By.XPATH, '//*[@data-l="t,vkc"]')
     AUTHORIZATION_BY_MAIL_RU = (By.XPATH, '//*[@data-l="t,mailru"]')
     AUTHORIZATION_BY_YANDEX = (By.XPATH, '//*[@data-l="t,yandex"]')
     OTHER_BUTTON = (By.XPATH, '//*[@data-l="t,other"]')
-    ERROR_TEXT = (By.XPATH, '//*[@class="LoginForm-module__error___1xmAD vkuiCaption__sizeYNone vkuiCaption__level1 vkuiTypography__host vkuiTypography__normalize vkuiRootComponent__host"]')
 
 class LoginPageHelper(BasePage):
     def __init__(self, driver):
