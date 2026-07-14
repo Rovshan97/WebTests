@@ -6,9 +6,18 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    @allure.step('Выбираем элемент')
+
     def find_element(self, locator, time=5):
          return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(locator), message = f"Не удалось найти элемент {locator}")
+
+
+    def find_elements(self, locator, time=5):
+         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_all_elements_located(locator), message = f"Не удалось найти элементы {locator}")
+
+
+    def find_any_elements(self, locator, time=5):
+         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_any_elements_located(locator), message = f"Не удалось найти элемент {locator}")
+
 
     @allure.step('Открываем страницу')
     def get_url(self, url):
