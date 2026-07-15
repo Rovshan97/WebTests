@@ -4,7 +4,7 @@ import allure
 
 class LoginPageLocators:
     AUTHORIZATION = (By.XPATH, '//*[@name="hero-login-btn"]')
-    REGISTRATION = (By.XPATH, '//*[@name="hero-register-btn"]')
+    REGISTRATION_BUTTON = (By.XPATH, '//*[@name="hero-register-btn"]')
     LOGIN_TAB = (By.XPATH, '//*[@name="tab-login"]')
     QR_TAB = (By.XPATH, '//*[@name="tab-qr"]')
     LOGIN_FIELD = (By.XPATH, '//*[@name="login-phone-email"]')
@@ -27,7 +27,7 @@ class LoginPageHelper(BasePage):
         with allure.step("Проверяем корректность загрузки страницы"):
             self.attach_screenshot()
         self.find_element(LoginPageLocators.AUTHORIZATION)
-        self.find_element(LoginPageLocators.REGISTRATION)
+        self.find_element(LoginPageLocators.REGISTRATION_BUTTON)
         self.find_element(LoginPageLocators.LOGIN_TAB)
         self.find_element(LoginPageLocators.QR_TAB)
         self.find_element(LoginPageLocators.LOGIN_FIELD)
@@ -59,3 +59,8 @@ class LoginPageHelper(BasePage):
         self.attach_screenshot()
         self.find_element(LoginPageLocators.RECOVERY_BUTTON).click()
 
+
+    @allure.step("Переходим к регистрации")
+    def click_registration(self):
+        self.attach_screenshot()
+        self.find_element(LoginPageLocators.REGISTRATION_BUTTON).click()
