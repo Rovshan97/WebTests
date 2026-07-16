@@ -15,7 +15,6 @@ class BasePage:
          return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_all_elements_located(locator), message = f"Не удалось найти элементы {locator}")
 
 
-
     @allure.step('Открываем страницу')
     def get_url(self, url):
         return self.driver.get(url)

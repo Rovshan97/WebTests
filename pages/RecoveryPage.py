@@ -10,8 +10,6 @@ class RecoveryPageLocators:
 
 
 
-
-
 class RecoveryPageHelper(BasePage):
     def __init__(self, driver):
         self.driver = driver
@@ -20,5 +18,5 @@ class RecoveryPageHelper(BasePage):
     def check_page(self):
         self.find_element(RecoveryPageLocators.PHONE_BUTTON).click()
         self.find_element(RecoveryPageLocators.PHONE_LOST_BUTTON).click()
-        self.find_element(RecoveryPageLocators.SUPPORT_SERVICE).click()
+        self.find_element(RecoveryPageLocators.SUPPORT_BUTTON).click()
         self.find_element(RecoveryPageLocators.QR_CODE).click()
