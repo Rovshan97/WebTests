@@ -1,4 +1,4 @@
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 import allure
@@ -27,7 +27,7 @@ class HelpPageLocators:
 
 
 
-class HelpPageHelper(BasePage):
+class HelpPageHelperHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()

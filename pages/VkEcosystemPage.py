@@ -3,18 +3,17 @@ from selenium.webdriver.common.by import By
 from pages.BasePage import BasePageHelper
 
 
-class AdvertisementCabinetHelpLocators:
-    TITLE = (By.XPATH, '//*[@href="/help/reklamnyi-kabinet"]')
+class VkEcosystemPageLocators:
+    VK_TITLE = (By.XPATH, '//*[@class="Header_logo__tL_od"]')
 
 
 
-class AdvertisementCabinetHelpHelper(BasePageHelper):
+class VkProjectsPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
 
-
     def check_page(self):
         with allure.step("Проверяем корректность загрузки страницы"):
             self.attach_screenshot()
-        self.find_element(AdvertisementCabinetHelpLocators.TITLE).click()
+        self.find_element(VkEcosystemPageLocators.VK_TITLE)
