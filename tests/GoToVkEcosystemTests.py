@@ -1,6 +1,6 @@
 from core.BaseTest import browser
 from pages.BasePage import BasePageHelper
-from pages.LoginPage import LoginPageHelperHelper
+from pages.LoginPage import LoginPageHelper
 from pages.VkEcosystemPage import VkProjectsPageHelper
 import allure
 

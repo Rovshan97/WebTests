@@ -57,6 +57,6 @@ class HelpPageHelper(BasePageHelper):
         self.find_element(HelpPageLocators.HELP_ADVERTISEMENT_CABINET)
 
 
-    def scrollToitem(self, locator):
+    def scroll_to_item(self, locator):
         scroll_item = self.find_element(locator)
         ActionChains(self.driver).scroll_to_element(scroll_item).click(scroll_item).perform()

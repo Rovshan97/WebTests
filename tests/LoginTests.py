@@ -14,7 +14,7 @@ PASSWORD = "12"
 @allure.title("Проверка ошибки при пустой форме авторизации")
 def test_empty_login_and_password(browser):
     BasePageHelper(browser).get_url(BASE_URL)
-    LoginPage = LoginPageHelperHelper(browser)
+    LoginPage = LoginPageHelper(browser)
     LoginPage.click_login()
     assert LoginPage.get_text_error() == EMPTY_LOGIN_ERROR
 
@@ -23,7 +23,7 @@ def test_empty_login_and_password(browser):
 @allure.title("Проверка ошибки при пустом поле пароль")
 def test_empty_password_error(browser):
     BasePageHelper(browser).get_url(BASE_URL)
-    LoginPage = LoginPageHelperHelper(browser)
+    LoginPage = LoginPageHelper(browser)
     LoginPage.enter_login(LOGIN)
     LoginPage.click_login()
     assert LoginPage.get_text_error() == EMPTY_PASSWORD_ERROR
