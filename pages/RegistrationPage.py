@@ -13,7 +13,7 @@ class RegistrationPageLocators:
     REGISTRATION_BY_PHONE = (By.XPATH, '//*[@name="register-phone-toggle"]')
 
 
-class RegistrationPageHelperHelper(BasePageHelper):
+class RegistrationPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
 

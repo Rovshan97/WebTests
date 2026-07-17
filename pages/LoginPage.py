@@ -18,7 +18,7 @@ class LoginPageLocators:
 
 
 
-class LoginPageHelperHelper(BasePageHelper):
+class LoginPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
