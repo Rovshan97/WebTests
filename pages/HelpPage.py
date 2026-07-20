@@ -1,4 +1,4 @@
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 import allure
@@ -27,7 +27,7 @@ class HelpPageLocators:
 
 
 
-class HelpPageHelper(BasePage):
+class HelpPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
@@ -57,6 +57,6 @@ class HelpPageHelper(BasePage):
         self.find_element(HelpPageLocators.HELP_ADVERTISEMENT_CABINET)
 
 
-    def scrollToitem(self, locator):
+    def scroll_to_item(self, locator):
         scroll_item = self.find_element(locator)
         ActionChains(self.driver).scroll_to_element(scroll_item).click(scroll_item).perform()
